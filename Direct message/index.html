@@ -1,0 +1,38 @@
+l<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Direct Message App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="login-container">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Enter your name" />
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="chat-container" style="display: none;">
+    <div class="chat-header">
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" class="profile-pic"/>
+      <div>
+        <h2>Alex Morgan</h2>
+        <p>Online <span id="typing-status"></span></p>
+      </div>
+    </div>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <div class="chat-input">
+      <input type="text" id="messageInput" placeholder="Type a message..." oninput="showTyping()" />
+      <input type="file" id="fileInput" onchange="sendFile()" hidden />
+      <button onclick="document.getElementById('fileInput').click()">📎</button>
+      <button onclick="addEmoji()">😊</button>
+      <button onclick="sendMessage()">Send</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
